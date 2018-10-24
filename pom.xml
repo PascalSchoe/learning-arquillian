@@ -28,6 +28,8 @@
 	<modules>
 		<module>embedded-container</module>
 		<module>remote-container</module>
+		<module>managed-container</module>
+		<module>testing-persistence</module>
 	</modules>
 
 	<build>

@@ -1,6 +1,12 @@
 # Arquillian Tutorial
+## Motivation
+Im javaEE bereich werden komplexere Konstrukte verwendet wie zb. CDI
 ## Testrunner
-- jj
+- Test runner sind die die 'Brücke' zwischen Arquillian und Test-Frameworks 
+- zb. für : Junit, testNG
+- Verwendung:
+	- JUnit --> `@RunWith(Arquillian.class)` 
+	- TestNG --> Testklasse muss von `Arquillian` erben.
 ## Deployment
 ## Container 
 - Ort an in dem die Laufzeitumgebung sich befindet.
@@ -73,3 +79,21 @@ JavaArchive alreadyCreatedArchive = ShrinkWrap
 
 Die andere Richtung ist ebenfalls möglich hierbei wird der *ZipExporter* genutzt.
 			
+## Modi			
+### In-Container
+Default Modus in dem Arquillian operiert:
+1. Arquillian reichert das Testarchiv an mit der Test-Infrastruktur an
+2. Verbindung zum Container, deployment des Archives
+3. Ausführung der Tests mittels jeweiligen Testrunner
+4. Arquillian erhält Testergebnisse
+Hierbei ist der Testrunner sozusagen der Client des Containers
+### Client	
+1. Test-Archiv wird ohne weitere Vorbereitungen in den COntainer deployed
+2. Test wird in der gleichen JVM wie Testrunner ausgeführt
+
+Hierbei sind die einzelnen Testcases die Clienten des Containers. Ideal für Web UI testing..
+			
+## zusätzlcihes
+--> @Test @OperateOnDeployment("werner")... multiple deployments
+--> testing persistence
+--> Modi: client, in-container
