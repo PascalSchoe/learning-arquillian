@@ -9,58 +9,22 @@
 	<artifactId>remote-container</artifactId>
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-engine -->
-
-
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>${version.junit}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.jboss.arquillian.junit</groupId>
 			<artifactId>arquillian-junit-container</artifactId>
 		</dependency>
-
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-all</artifactId>
-			<version>1.8.5</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hamcrest</groupId>
-			<artifactId>hamcrest-integration</artifactId>
-			<version>1.2.1</version>
-		</dependency>
-		<dependency>
-			<groupId>net.avh4.util</groupId>
-			<artifactId>imagecomparison</artifactId>
-			<version>0.0.2</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jboss.spec</groupId>
-			<artifactId>jboss-javaee-7.0</artifactId>
-			<version>1.0.3.Final</version>
-			<type>pom</type>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.wildfly</groupId>
-			<artifactId>wildfly-spec-api</artifactId>
-			<version>8.2.1.Final</version>
-			<type>pom</type>
-			<scope>test</scope>
-		</dependency>
 		<dependency>
 			<groupId>org.wildfly</groupId>
 			<artifactId>wildfly-arquillian-container-remote</artifactId>
-			<version>8.2.1.Final</version>
-			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.jboss.arquillian.protocol</groupId>
 			<artifactId>arquillian-protocol-servlet</artifactId>
-			<scope>test</scope>
 		</dependency>
 
 		<dependency>

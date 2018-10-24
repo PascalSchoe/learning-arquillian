@@ -17,12 +17,15 @@
 		<version.arquillian.bom>1.4.1.Final</version.arquillian.bom>
 		<version.junit>4.12</version.junit>
 		<version.wildfly.arquillian.remote.container>2.0.0.Final</version.wildfly.arquillian.remote.container>
+		<version.wildfly>8.2.1.Final</version.wildfly>
 
 		<version.compiler.plugin>3.8.0</version.compiler.plugin>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 
 		<version.surefire.plugin>2.22.0</version.surefire.plugin>
+		<!--<jboss.home>C:\Users\p.schoenfeld\Desktop\wildfly-8.2.0.Final_tut2</jboss.home> -->
+		<jboss.home>E:\proggen\software\wildfly-8.2.0.Final</jboss.home>
 	</properties>
 
 	<modules>
@@ -66,6 +69,34 @@
 				<version>${version.arquillian.bom}</version>
 				<scope>import</scope>
 				<type>pom</type>
+			</dependency>
+
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.12</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>javax</groupId>
+				<artifactId>javaee-api</artifactId>
+				<version>7.0</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<!-- damit es nicht überall exkludiert werden muss -->
+			<dependency>
+				<groupId>org.wildfly</groupId>
+				<artifactId>wildfly-arquillian-container-remote</artifactId>
+				<version>8.2.1.Final</version>
+				<scope>test</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>sun.jdk</groupId>
+						<artifactId>jconsole</artifactId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

@@ -9,7 +9,6 @@
 	<artifactId>managed-container</artifactId>
 
 	<properties>
-		<jboss.home>C:\Users\p.schoenfeld\Desktop\wildfly-8.2.0.Final_tut2</jboss.home>
 		<version.wildfly>8.2.1.Final</version.wildfly>
 	</properties>
 
@@ -17,24 +16,27 @@
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
-			<version>7.0</version>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.jboss.arquillian.junit</groupId>
 			<artifactId>arquillian-junit-container</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.wildfly</groupId>
 			<artifactId>wildfly-arquillian-container-managed</artifactId>
 			<version>${version.wildfly}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>sun.jdk</groupId>
+					<artifactId>jconsole</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 	</dependencies>
 	<build>
