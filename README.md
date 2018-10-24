@@ -55,9 +55,13 @@ System.out.println(myArchive.toString(true));
 Das 'true' bewirkt hierbei eine Rekursive Ausgabe aller Inhalte.
 
 
-Wechseln zwischen den Archivarten: ```java myArchive.as(WebArchive.class).addWebResource(....)```
+Wechseln zwischen den Archivarten: 
+```java
+ myArchive.as(WebArchive.class).addWebResource(....)
+```
 
 Ebenfalls möglich importieren von schon erzeugten Archiven:
+
 ```java
 JavaArchive alreadyCreatedArchive = ShrinkWrap
 					.create(ZipImporter.class, "alreadyCreatedArchive.jar")
@@ -65,7 +69,6 @@ JavaArchive alreadyCreatedArchive = ShrinkWrap
 						new File("path/to/file/alreadyCreatedArchive.jar")
  					)
 					.as(JavaArchive.class);
-
 ```
 
 Die andere Richtung ist ebenfalls möglich hierbei wird der *ZipExporter* genutzt.
