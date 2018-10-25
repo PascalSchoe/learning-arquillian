@@ -11,8 +11,7 @@ Sobald du komplexere Projekte testen möchtest die zum Beispiel mit *Dependency 
 	- JUnit --> `@RunWith(Arquillian.class)` 
 	- TestNG --> Testklasse muss von `Arquillian` erben.
 ## Container 
-- Ort an in dem die Laufzeitumgebung sich befindet.
--> zb. Wildfly
+- Ort an in dem die Laufzeitumgebung sich befindet, zb. Wildfly
 - Arquillian kann von hause aus schon mit vielen Containern kommunizieren
 - Sollte ein Container nicht unterstützt werden so liefert Arquillian ein SPI.
 - Arquillian kann von hause aus schon mit vielen Containern kommunizieren
@@ -22,17 +21,20 @@ Sobald du komplexere Projekte testen möchtest die zum Beispiel mit *Dependency 
 - in der selben *JVM* wie der *Testrunner*
 - Container wird von Arquillian gemanaged
 - Tests werden mit einem lokalen Protokoll aufgerufen
+
 Ein Beispiel hierzu findest du [hier](./embedded-container/).
 
 ### remote
 - *Container* *JVM* separiert von Testrunner
 - Arquillian bindet sich an den *Container* und deployed das von *ShrinkWrap* erstellte Archiv. 
 - Tests werden mit einem Remote Protokoll (zb. *Servlet*, *JMX*) aufgerufen. 
+
 Ein Beispiel hierzu findest du [hier](./remote-container/).
 
 ### managed
 - sehr ähnich zu *remote containern*
 - Unterschied ist das die Lebenszyklen des Containers von Arquillian gehandelt werden
+
 Ein Beispiel hierzu findest du [hier](./managed-container/).
 
 ## ShrinkWrap
@@ -85,7 +87,7 @@ JavaArchive alreadyCreatedArchive = ShrinkWrap
 
 Die andere Richtung ist ebenfalls möglich hierbei wird der *ZipExporter* genutzt.
 			
-## Modi			
+## Run modes		
 ### In-Container
 Default Modus in dem Arquillian operiert:
 1. Arquillian reichert das Testarchiv an mit der Test-Infrastruktur an
