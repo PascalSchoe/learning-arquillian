@@ -35,6 +35,7 @@ public class GreeterTest {
 				greeter.createGreeting("Earthling")
 		);
 		
+		
 		System.out.println("==============================");
 		greeter.greet(System.out, "Earthling");
 		System.out.println("==============================");
