@@ -22,14 +22,18 @@ Sobald du komplexere Projekte testen möchtest die zum Beispiel mit *Dependency 
 - in der selben *JVM* wie der *Testrunner*
 - Container wird von Arquillian gemanaged
 - Tests werden mit einem lokalen Protokoll aufgerufen
+Ein Beispiel hierzu findest du [hier](./embedded-container/).
+
 ### remote
 - *Container* *JVM* separiert von Testrunner
 - Arquillian bindet sich an den *Container* und deployed das von *ShrinkWrap* erstellte Archiv. 
 - Tests werden mit einem Remote Protokoll (zb. *Servlet*, *JMX*) aufgerufen. 
+Ein Beispiel hierzu findest du [hier](./remote-container/).
 
 ### managed
 - sehr ähnich zu *remote containern*
 - Unterschied ist das die Lebenszyklen des Containers von Arquillian gehandelt werden
+Ein Beispiel hierzu findest du [hier](./managed-container/).
 
 ## ShrinkWrap
 - Java API zum Erstellen von Archiven 
