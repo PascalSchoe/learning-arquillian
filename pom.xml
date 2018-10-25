@@ -24,8 +24,8 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 
 		<version.surefire.plugin>2.22.0</version.surefire.plugin>
-		<!--<jboss.home>C:\Users\p.schoenfeld\Desktop\wildfly-8.2.0.Final_tut2</jboss.home> -->
-		<jboss.home>E:\proggen\software\wildfly-8.2.0.Final</jboss.home>
+		<jboss.home>C:\Users\p.schoenfeld\Desktop\wildfly-8.2.0.Final_tut</jboss.home>
+		<!--  <jboss.home>E:\proggen\software\wildfly-8.2.0.Final</jboss.home>-->
 	</properties>
 
 	<modules>
@@ -52,12 +52,6 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>${version.surefire.plugin}</version>
 			</plugin>
-
-			<!-- <plugin> <groupId>org.wildfly.plugins</groupId> <artifactId>wildfly-maven-plugin</artifactId> 
-				<version>${version.wildfly.maven.plugin}</version> <executions> <execution> 
-				<id>deploy</id> <phase>package</phase> <goals> <goal>deploy</goal> </goals> 
-				</execution> <execution> <id>undeploy</id> <phase>clean</phase> <goals> <goal>undeploy</goal> 
-				</goals> </execution> </executions> </plugin> -->
 		</plugins>
 	</build>
 

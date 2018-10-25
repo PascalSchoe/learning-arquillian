@@ -1,13 +1,15 @@
 # Arquillian Tutorial
-## Motivation
-Im javaEE bereich werden komplexere Konstrukte verwendet wie zb. CDI
+Sobald du komplexere Projekte testen möchtest die zum Beispiel mit *Dependency Injection* arbeiten oder auf Datenbank operieren dann ist es nur mit viel Aufwand und [Mocks](https://site.mockito.org/) möglich diese zu testen. Und dort kommt *Arquillian* ins Spiel! Seine Aufgaben sind mitunter:
+- Container Management
+- Anreicherung der Test Klassen
+- Resultate zurückgeben
+
 ## Testrunner
 - Test runner sind die die 'Brücke' zwischen Arquillian und Test-Frameworks 
-- zb. für : Junit, testNG
+- zb. für : *JUnit*, *TestNG*
 - Verwendung:
 	- JUnit --> `@RunWith(Arquillian.class)` 
 	- TestNG --> Testklasse muss von `Arquillian` erben.
-## Deployment
 ## Container 
 - Ort an in dem die Laufzeitumgebung sich befindet.
 -> zb. Wildfly
@@ -17,22 +19,22 @@ Im javaEE bereich werden komplexere Konstrukte verwendet wie zb. CDI
 - Sollte ein Container nicht unterstützt werden so liefert Arquillian ein SPI.
 
 ### embedded
-- in der selben JVM wie der Testrunner
+- in der selben *JVM* wie der *Testrunner*
 - Container wird von Arquillian gemanaged
 - Tests werden mit einem lokalen Protokoll aufgerufen
 ### remote
-- container jvm separiert von Testrunner
-- arquillian bindet sich an den Container und deployed das von ShrinkWrap erstellte Archiv. 
-- Tests werden mit einem Remote Protokoll (zb. Servlet, JMX) aufgerufen. 
+- *Container* *JVM* separiert von Testrunner
+- Arquillian bindet sich an den *Container* und deployed das von *ShrinkWrap* erstellte Archiv. 
+- Tests werden mit einem Remote Protokoll (zb. *Servlet*, *JMX*) aufgerufen. 
 
 ### managed
-- sehr ähnich zu remote containern
+- sehr ähnich zu *remote containern*
 - Unterschied ist das die Lebenszyklen des Containers von Arquillian gehandelt werden
 
 ## ShrinkWrap
-- Java API zum erstellen von Archiven 
-- erstellte Microdeployments werden von Arquillian genutzt um die Testumgebung zu generieren.
-- liefert ein virtuelles Dateiensystem
+- Java API zum Erstellen von Archiven 
+- Erstellte Microdeployments werden von Arquillian genutzt um die Testumgebung zu generieren.
+- Liefert ein virtuelles Dateiensystem
 
 ```java
 JavaArchive myArchive = ShrinkWrap
@@ -88,12 +90,7 @@ Default Modus in dem Arquillian operiert:
 4. Arquillian erhält Testergebnisse
 Hierbei ist der Testrunner sozusagen der Client des Containers
 ### Client	
-1. Test-Archiv wird ohne weitere Vorbereitungen in den COntainer deployed
+1. Test-Archiv wird ohne weitere Vorbereitungen in den Container deployed
 2. Test wird in der gleichen JVM wie Testrunner ausgeführt
 
-Hierbei sind die einzelnen Testcases die Clienten des Containers. Ideal für Web UI testing..
-			
-## zusätzlcihes
---> @Test @OperateOnDeployment("werner")... multiple deployments
---> testing persistence
---> Modi: client, in-container
+Hierbei sind die einzelnen Testcases die Klienten des Containers. Ideal für Web UI testing..
